@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+from django.shortcuts import render
+=======
 from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect
+>>>>>>> 17ae6f9d22daac6957a28e2483c560d91e9d2423
 from item.models import Category, Item
 
 from .forms import SignupForm
@@ -15,6 +20,9 @@ def contact(request):
     return render(request, 'core/contact.html')
 
 def signup(request):
+    form = SignupForm()
+<<<<<<< HEAD
+=======
     if request.method == "POST":
         form = SignupForm(request.POST)
 
@@ -23,9 +31,7 @@ def signup(request):
 
             return redirect('/login/')
         
-        else: 
-            form = SignupForm()
-    form = SignupForm() 
+>>>>>>> 17ae6f9d22daac6957a28e2483c560d91e9d2423
 
     return render(request, 'core/signup.html', {
         'form':form
