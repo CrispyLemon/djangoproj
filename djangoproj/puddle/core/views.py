@@ -15,6 +15,7 @@ def contact(request):
     return render(request, 'core/contact.html')
 
 def signup(request):
+    form = SignupForm()
     if request.method == "POST":
         form = SignupForm(request.POST)
 
@@ -22,10 +23,7 @@ def signup(request):
             form.save()
 
             return redirect('/login/')
-        
-        else: 
-            form = SignupForm()
-    form = SignupForm() 
+    
 
     return render(request, 'core/signup.html', {
         'form':form
