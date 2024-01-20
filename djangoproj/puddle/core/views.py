@@ -29,5 +29,12 @@ def signup(request):
         'form':form
     })
 
-def logout_view(request): 
+
+def logout_request(request):
     logout(request)
+    items = Item.objects.filter(is_sold=False)[0:6]
+    categories = Category.objects.all()
+    return render(request, 'core/index.html',{
+        'categories':categories,
+        'items':items,
+        })
