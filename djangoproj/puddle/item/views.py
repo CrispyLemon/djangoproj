@@ -15,8 +15,7 @@ def items(request):
 
     return render(request, 'item/items.html', {
         'items' : items,
-        'query' : query,
-        'categories' : categories,        
+        'query' : query,      
     })
 
 def detail(request, pk):
